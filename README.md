@@ -22,7 +22,7 @@ THEN I am again presented with current and future conditions for that city
 
 ## Links
 
-* [Weather Dashboard]()
+* [Weather Dashboard](https://jondnv.github.io/WeatherDashboard/)
 * [Github Repository](https://github.com/JonDnv/WeatherDashboard)
   
 ---
@@ -47,4 +47,4 @@ The following image shows the finished site:
 
  1. Created Shell html, js, css & README files
  2. Created GitHub Pages site
- 3. 
+ 3. Updated the Favicon
