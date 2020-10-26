@@ -48,4 +48,5 @@ The following image shows the finished site:
  1. Created Shell html, js, css & README files
  2. Created GitHub Pages site
  3. Updated the Favicon
- 4. 
+ 4. Created Weather API Calls
+ 5. 
