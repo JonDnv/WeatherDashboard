@@ -1,0 +1,54 @@
+body {
+  background-color: whitesmoke;
+}
+
+.flexContainer {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
+}
+
+header {
+  background-color: #292929;
+  color: snow;
+  text-align: center;
+}
+
+.searchAside {
+  margin-left: 10px;
+}
+
+#citySearch {
+  width: 225px;
+  height: 35px;
+}
+
+.searchButton {
+  height: 35px;
+  background-color: #127bfe;
+  color: white;
+  box-shadow: cornflowerblue;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.searchButton:active {
+  background: #0f6ddf;
+  box-shadow: inset 0px 0px 5px #c1c1c1;
+  outline: none;
+}
+
+#newCity {
+  font-size: 1.5rem;
+  border: 1px solid #626d78;
+  color: #626d78;
+  background-color: white;
+  width: 17rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  text-align: left;
+}
+
+.searchList {
+  margin-top: 0.75rem;
+}
