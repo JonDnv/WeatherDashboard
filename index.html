@@ -12,32 +12,35 @@
 </head>
 
 <body>
-  <container class="flexContainer">
-    <!-- Page Header -->
-    <header class="header">
-      <h1>Weather Dashboard</h1>
-    </header>
+     <!-- Flex Container -->
+     <div class="flexContainer">
+ 
+  <!-- Page Header -->
+      <header class="header">
+        <h1>Weather Dashboard</h1>
+      </header>
+
+
 
     <!-- Page Aside - Search Bar & List -->
-    <containter class="searchAside">
-      <div class="row">
+      <containter class="searchAside">
         <aside class="col-3">
-          <h4>Search For A City:</h4>
+          <h4 id="searchTitle">Search For A City:</h4>
           <div class="searchBar">
             <input type="text" name="citySearch" id="citySearch" />
             <button type:"button" value="submit" class="searchButton fa fa-search"></button>
             <div class="searchList"></div>
           </div>
         </aside>
+      </containter>
 
-        <article class="main col-9">
-          
-          
+      <article class="currentWeather main col-9">
 
-        </article>
-      </div>
 
-    </containter>
+
+      </article>
+    </div>
+
   </container>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"

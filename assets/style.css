@@ -4,18 +4,24 @@ body {
 
 .flexContainer {
   display: flex;
-  flex-flow: column;
-  justify-content: space-around;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: space-between;
 }
 
-header {
+.header {
   background-color: #292929;
   color: snow;
   text-align: center;
+  order: 1;
+  flex: 1;
+  align-self: flex-start;
 }
 
 .searchAside {
-  margin-left: 10px;
+  order: 2;
+  flex: 1 1 auto;
 }
 
 #citySearch {
@@ -51,4 +57,9 @@ header {
 
 .searchList {
   margin-top: 0.75rem;
+}
+
+.currentWeather {
+  border: lightgray;
+  order: 3;
 }

@@ -49,4 +49,5 @@ The following image shows the finished site:
  2. Created GitHub Pages site
  3. Updated the Favicon
  4. Created Weather API Calls
- 5. 
+ 5. Completed Weather API Call Function
+ 6. 
