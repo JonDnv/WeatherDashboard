@@ -7,6 +7,7 @@ var oneCallApi3 = "&units=imperial";
 var oneCallApi4 = "&exclude=minutely,hourly,alerts";
 var weatherApiEnd = "&appid=d825b4839db3c20535f069ecf1ad48bd";
 var weatherIconUrlStart = "http://openweathermap.org/img/wn/";
+var weatherIconUrlEnd = "@2x.png";
 var weatherReturn = {};
 var forcastReturn = {};
 
@@ -127,50 +128,55 @@ $(document).ready(function () {
         weatherReturn.currentHumidity = todaysWeather.main.humidity;
         weatherReturn.currentWindSpeed = todaysWeather.wind.speed;
         weatherReturn.currentIcon =
-          weatherIconUrlStart + todaysWeather.weather[0].icon;
+          weatherIconUrlStart +
+          todaysWeather.weather[0].icon +
+          weatherIconUrlEnd;
+
+        $(".currentWeather").empty();
+        var cityDiv = $("<div>");
+        cityDiv.attr("class", "currentDay");
+        var cityIcon = $("<img>");
+        cityIcon.attr("src", weatherReturn.currentIcon);
+        var cityDate = $("<h3>");
+        cityDate.text(
+          weatherReturn.cityName + " (" + weatherReturn.currentDate + ")"
+        );
+        cityDate.append(cityIcon);
+        cityDiv.append(cityDate);
+        $(".currentWeather").append(cityDiv);
+
+        var currentTempDiv = $("<div>");
+        currentTempDiv.attr("class", "currWeather");
+        var currTemp = $("<p>");
+        currTemp.text("Temperature: " + weatherReturn.currentTemp + "ºF");
+        $(".currentWeather").append(currTemp);
+
+        var currentHumidityDiv = $("<div>");
+        currentHumidityDiv.attr("class", "currWeather");
+        var currHum = $("<p>");
+        currHum.text("Humidity: " + weatherReturn.currentHumidity + "%");
+        $(".currentWeather").append(currHum);
+
+        var currWindSpeed = $("<div>");
+        currWindSpeed.attr("class", "currWeather");
+        var currWind = $("<p>");
+        currWind.text("Wind Speed: " + weatherReturn.currentWindSpeed + " MPH");
+        $(".currentWeather").append(currHum);
       });
   }
-
-  function displayResults() {
-    
-      
-  }
-
-  // $(".main").empty();
-  // var div1 = $("<div>");
-  // div1.attr("id", "currentDate");
-  // var cityDate = $("<h3>");
-  // cityDate.text(cityName + " (" + currentDate + ")");
-  // div1.append(cityDate);
-  // $(".main").append(div1);
-
-  // $(".main").empty();
-  // var d1 = $("<div>");
-  // d1.attr("id", "oneday");
-  // d1.attr("class", "");
-  // var uv = $("<p>");
-  // var temp = $("<p>");
-  // temp.text("TEMP: " + oneCall.main.temp);
-
-  // d1.append(temp);
-  // d1.append(uv);
-  // $(".main").append(d1);
 
   $(".searchButton").on("click", function () {
     addSearchList(document.getElementById("citySearch").value);
     oneCall(document.getElementById("citySearch").value);
-    setInterval(function () {
-      displayResults();
-    }, 2000);
     displaySearchList(searchList);
     clearSearchBar();
   });
 
   $("#citySearch").keypress(function (e) {
     if (e.which === 13) {
+      console.log(document.getElementById("citySearch").value);
       addSearchList(document.getElementById("citySearch").value);
       oneCall(document.getElementById("citySearch").value);
-      displayResults();
       displaySearchList(searchList);
       clearSearchBar();
     }
