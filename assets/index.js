@@ -73,7 +73,7 @@ $(document).ready(function () {
           })
           .then(function (oneCallData) {
             //console.log(oneCallData);
-            weatherReturn.uvIndex = oneCallData.current.uvi;
+            var uvIndex = oneCallData.current.uvi;
 
             var day1 = {};
             var day2 = {};
@@ -120,6 +120,14 @@ $(document).ready(function () {
             day5.icon =
               weatherIconUrlStart + oneCallData.daily[5].weather[0].icon;
             forcastReturn.day5 = day5;
+
+            var currUv = $("<h6>");
+            currUv.text("UV Index: ");
+            $(".currentUv").append(currUv);
+
+            var currUvIndex;
+            currUvIndex.text(uvIndex);
+            $(".currentUv").append(currUvIndex);
           });
 
         weatherReturn.cityName = todaysWeather.name;
@@ -133,8 +141,20 @@ $(document).ready(function () {
           weatherIconUrlEnd;
 
         $(".currentWeather").empty();
-        var cityDiv = $("<div>");
-        cityDiv.attr("class", "currentDay");
+        $(".currentWeather").append('<div class="cityDiv currWeather"></div>');
+        $(".currentWeather").append(
+          '<div class="currentTempDiv currWeather"></div>'
+        );
+        $(".currentWeather").append(
+          '<div class="currentHumidityDiv currWeather"></div>'
+        );
+        $(".currentWeather").append(
+          '<div class="currWindSpeed currWeather"></div>'
+        );
+        $(".currentWeather").append(
+          '<div class="currentUv currWeather"></div>'
+        );
+
         var cityIcon = $("<img>");
         cityIcon.attr("src", weatherReturn.currentIcon);
         var cityDate = $("<h3>");
@@ -142,26 +162,19 @@ $(document).ready(function () {
           weatherReturn.cityName + " (" + weatherReturn.currentDate + ")"
         );
         cityDate.append(cityIcon);
-        cityDiv.append(cityDate);
-        $(".currentWeather").append(cityDiv);
+        $(".cityDiv").append(cityDate);
 
-        var currentTempDiv = $("<div>");
-        currentTempDiv.attr("class", "currWeather");
-        var currTemp = $("<p>");
+        var currTemp = $("<h6>");
         currTemp.text("Temperature: " + weatherReturn.currentTemp + "ºF");
-        $(".currentWeather").append(currTemp);
+        $(".currentTempDiv").append(currTemp);
 
-        var currentHumidityDiv = $("<div>");
-        currentHumidityDiv.attr("class", "currWeather");
-        var currHum = $("<p>");
-        currHum.text("Humidity: " + weatherReturn.currentHumidity + "%");
-        $(".currentWeather").append(currHum);
+        var currHum = $("<h6>");
+        currHum.text("Humidity: " + weatherReturn.currentTemp + "%");
+        $(".currentHumidityDiv").append(currHum);
 
-        var currWindSpeed = $("<div>");
-        currWindSpeed.attr("class", "currWeather");
-        var currWind = $("<p>");
+        var currWind = $("<h6>");
         currWind.text("Wind Speed: " + weatherReturn.currentWindSpeed + " MPH");
-        $(".currentWeather").append(currHum);
+        $(".currWindSpeed").append(currWind);
       });
   }
 
