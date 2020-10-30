@@ -22,7 +22,7 @@ $(document).ready(function () {
   function displaySearchList(searchListArray) {
     $(".searchList").empty();
     for (var i = 0; i < searchListArray.length; i++) {
-      var newCity = $('<button type="button" id="newCity"></button>').text(
+      var newCity = $('<button type="button" class="newCity"></button>').text(
         searchListArray[i]
       );
       $(".searchList").prepend(newCity);
@@ -333,8 +333,7 @@ $(document).ready(function () {
     }
   });
 
-  // Only Working For 1st Button
-  $("#newCity").on("click", function () {
+  $(document).on("click", ".newCity", function () {
     console.log($(this).text());
     addSearchList($(this).text());
     oneCall($(this).text());
