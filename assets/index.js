@@ -336,5 +336,9 @@ $(document).ready(function () {
   // Only Working For 1st Button
   $("#newCity").on("click", function () {
     console.log($(this).text());
+    addSearchList($(this).text());
+    oneCall($(this).text());
+    displaySearchList(searchList);
+    clearSearchBar();
   });
 });

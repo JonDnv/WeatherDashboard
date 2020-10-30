@@ -30,7 +30,7 @@ THEN I am again presented with current and future conditions for that city
 ## Mock Up
 
 The following image shows the finished site:
-![Website]()
+![Website](./assets/Weather-Dashboard.png)
 
 ---
 
