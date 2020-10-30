@@ -50,4 +50,5 @@ The following image shows the finished site:
  3. Updated the Favicon
  4. Created Weather API Calls
  5. Completed Weather API Call Function
- 6. 
+ 6. Updated Dynamically Created HTML Functions
+ 7. Fixed Button Issue for City History
