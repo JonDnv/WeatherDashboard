@@ -1,12 +1,13 @@
 var searchListEl = document.querySelector("searchList");
 var searchBarEl = document.querySelector("citySearch");
-var todaysWeatherApiStart = "http://api.openweathermap.org/data/2.5/weather?q=";
+var todaysWeatherApiStart =
+  "https://api.openweathermap.org/data/2.5/weather?q=";
 var oneCallApiStart = "https://api.openweathermap.org/data/2.5/onecall?lat=";
 var oneCallApi2 = "&lon=";
 var oneCallApi3 = "&units=imperial";
 var oneCallApi4 = "&exclude=minutely,hourly,alerts";
 var weatherApiEnd = "&appid=d825b4839db3c20535f069ecf1ad48bd";
-var weatherIconUrlStart = "http://openweathermap.org/img/wn/";
+var weatherIconUrlStart = "https://openweathermap.org/img/wn/";
 var weatherIconUrlEnd = "@2x.png";
 var weatherReturn = {};
 var forcastReturn = {};
